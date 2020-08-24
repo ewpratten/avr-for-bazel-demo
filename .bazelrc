@@ -1,0 +1,7 @@
+# Use our custom-configured c++ toolchain.
+build:avr_config --crosstool_top=//toolchain:avr_suite
+build:avr_config --cpu=avr
+
+# Use the default Bazel C++ toolchain to build the tools used during the
+# build.
+build:avr_config --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
